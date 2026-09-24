@@ -121,6 +121,14 @@
 'state'       Keyword.Declaration
 ' '           Text.Whitespace
 's1'          Name.Variable
+' '           Text.Whitespace
+'implemented' Keyword.Reserved
+' '           Text.Whitespace
+'by'          Keyword.Reserved
+' '           Text.Whitespace
+'machine'     Keyword.Reserved
+' '           Text.Whitespace
+'subMachine1' Name.Variable
 ','           Punctuation
 ' '           Text.Whitespace
 's2'          Name.Variable

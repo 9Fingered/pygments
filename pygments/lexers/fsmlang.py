@@ -82,7 +82,7 @@ class FSMLangLexer(RegexLexer):
 		'actions', 'return', 'returns', 'states', 'events', 'void', 'transition', 'data', 'native',
 		'implementation', 'impl', 'on', 'entry', 'exit', 'prologue', 'epilogue', 'translator', 'all',
 		'struct', 'union', 'inhibits', 'submachines', 'parent', 'void', 'external', 'reentrant',
-		'noEvent', 'noTransition', 'sequence', 'start', 'include', 'guard'
+		'noEvent', 'noTransition', 'sequence', 'start', 'include', 'guard', 'implemented', 'by'
 		)
 
 	operators = ( '::' )
@@ -143,13 +143,20 @@ class FSMLangLexer(RegexLexer):
 
          default('#pop')
 		],
+		'find_and_discard_machine_name': [
+         include('commentsandwhitespace'),
+			(r'(by)\b', Keyword.Reserved),
+			(r'(machine)\b', Keyword.Reserved),
+			(r'([$a-zA-Z_][\w\\]*)', Name.Variable, '#pop'),
+		],
 		# States can have entry and exit functions
 		's_name': [
          include('commentsandwhitespace'),
 			(r'(on)\b', Keyword.Reserved),
 			(r'(entry|exit)\b', Keyword.Reserved, 'get_function_name'),
+			(r'(implemented)\b', Keyword.Reserved, 'find_and_discard_machine_name'),
 
-			# Events must be unique; also, we need to know
+			# States must be unique; also, we need to know
          #  them to properly lex some other constructions.
 			(r'([$a-zA-Z_][\w\\]*)', add_state),
 			(r',', Punctuation),

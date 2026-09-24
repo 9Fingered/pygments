@@ -20,6 +20,8 @@ state
 	on entry s6_entry
 	on exit
 	;
+state s7;
+state s8 implemented by machine s7_implementor;
 
 ---tokens---
 'state'       Keyword.Declaration
@@ -114,5 +116,25 @@ state
 ' '           Text.Whitespace
 'exit'        Keyword.Reserved
 '\n\t'        Text.Whitespace
+';'           Punctuation
+'\n'          Text.Whitespace
+
+'state'       Name.Variable
+' '           Text.Whitespace
+'s7'          Name.Variable
+';'           Punctuation
+'\n'          Text.Whitespace
+
+'state'       Keyword.Declaration
+' '           Text.Whitespace
+'s8'          Name.Variable
+' '           Text.Whitespace
+'implemented' Keyword.Reserved
+' '           Text.Whitespace
+'by'          Keyword.Reserved
+' '           Text.Whitespace
+'machine'     Keyword.Reserved
+' '           Text.Whitespace
+'s7_implementor' Name.Variable
 ';'           Punctuation
 '\n'          Text.Whitespace

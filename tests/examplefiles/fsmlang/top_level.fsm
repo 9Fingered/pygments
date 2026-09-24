@@ -54,7 +54,7 @@ event e3 data translator xlate_e3
  }
  ;
 
-state s1, s2, s3, s4;
+state s1 implemented by machine subMachine1, s2, s3, s4;
 
 	/** a sub machine */
   machine subMachine1 {
