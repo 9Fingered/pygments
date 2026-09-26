@@ -28,6 +28,13 @@
 'baz'         Name.Function
 ';'           Punctuation
 '\n '         Text.Whitespace
+'translators' Keyword.Reserved
+' '           Text.Whitespace
+'return'      Keyword.Reserved
+' '           Text.Whitespace
+'events'      Keyword.Reserved
+';'           Punctuation
+'\n '         Text.Whitespace
 'native'      Keyword.Reserved
 ' '           Text.Whitespace
 'impl'        Keyword.Reserved

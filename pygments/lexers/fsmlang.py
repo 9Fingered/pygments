@@ -82,7 +82,8 @@ class FSMLangLexer(RegexLexer):
 		'actions', 'return', 'returns', 'states', 'events', 'void', 'transition', 'data', 'native',
 		'implementation', 'impl', 'on', 'entry', 'exit', 'prologue', 'epilogue', 'translator', 'all',
 		'struct', 'union', 'inhibits', 'submachines', 'parent', 'void', 'external', 'reentrant',
-		'noEvent', 'noTransition', 'sequence', 'start', 'include', 'guard', 'implemented', 'by'
+		'noEvent', 'noTransition', 'sequence', 'start', 'include', 'guard', 'implemented', 'by',
+		'translators'
 		)
 
 	operators = ( '::' )
