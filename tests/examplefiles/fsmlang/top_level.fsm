@@ -10,7 +10,7 @@ native
 
 machine newMachine
  on transition baz;
- translators return events;
+ data translators return events;
  native impl {int foo; }
 {
 data

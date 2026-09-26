@@ -278,6 +278,7 @@ class FSMLangLexer(RegexLexer):
 		],
 		'event_data': [
 			(r'translator', Keyword.Reserved, 'get_function_name'),
+			(r'(implemented)\b', Keyword.Reserved, 'find_and_discard_machine_name'),
 			include('data')
 		],
 		'native': [

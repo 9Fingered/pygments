@@ -26,6 +26,23 @@ data translator xlate_e2_data
 
 event e4;
 
+event e5
+data translator xlate_e5_data
+implemented by machine foo
+{
+	int foo;
+	struct {
+		int bar;
+		float baz;
+	} str_t;
+}
+;
+
+event e6
+data translator xlate_e6_data
+implemented by machine bar
+;
+
 ---tokens---
 'event'       Keyword.Declaration
 ' '           Text.Whitespace
@@ -98,5 +115,66 @@ event e4;
 'event'       Keyword.Declaration
 ' '           Text.Whitespace
 'e4'          Name.Variable
+';'           Punctuation
+'\n\n'        Text.Whitespace
+
+'event'       Keyword.Declaration
+' '           Text.Whitespace
+'e5'          Name.Variable
+'\n'          Text.Whitespace
+
+'data'        Keyword.Reserved
+' '           Text.Whitespace
+'translator'  Keyword.Reserved
+' '           Text.Whitespace
+'xlate_e5_data' Name.Function
+'\n'          Text.Whitespace
+
+'implemented' Keyword.Reserved
+' '           Text.Whitespace
+'by'          Keyword.Reserved
+' '           Text.Whitespace
+'machine'     Keyword.Reserved
+' '           Text.Whitespace
+'foo'         Name.Variable
+'\n'          Text.Whitespace
+
+'{'           Punctuation
+'\n\t'        Text.Whitespace
+'int foo;\n\tstruct ' Text
+'{'           Punctuation
+'\n\t\t'      Text.Whitespace
+'int bar;\n\t\tfloat baz;\n\t' Text
+'}'           Punctuation
+' '           Text.Whitespace
+'str_t;\n'    Text
+
+'}'           Punctuation
+'\n'          Text.Whitespace
+
+';'           Punctuation
+'\n\n'        Text.Whitespace
+
+'event'       Keyword.Declaration
+' '           Text.Whitespace
+'e6'          Name.Variable
+'\n'          Text.Whitespace
+
+'data'        Keyword.Reserved
+' '           Text.Whitespace
+'translator'  Keyword.Reserved
+' '           Text.Whitespace
+'xlate_e6_data' Name.Function
+'\n'          Text.Whitespace
+
+'implemented' Keyword.Reserved
+' '           Text.Whitespace
+'by'          Keyword.Reserved
+' '           Text.Whitespace
+'machine'     Keyword.Reserved
+' '           Text.Whitespace
+'bar'         Name.Variable
+'\n'          Text.Whitespace
+
 ';'           Punctuation
 '\n'          Text.Whitespace
